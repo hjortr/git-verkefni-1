@@ -24,7 +24,7 @@ io.on('connection', (socket) => {
   console.log('Notandi tengdist');
 
   socket.emit('authenticate'); // Láta notenda slá inn lykilorðið
-  console.log("ég er bjarnabófi")
+  console.log("ég er bjarnabófi");
   socket.on('authenticate', (password) => {
     if (password === PASSWORD) {
       console.log('Auðkenning tókst');
@@ -38,6 +38,7 @@ io.on('connection', (socket) => {
   socket.on('chooseName', (userName) => {
     socket.userName = userName;
     onlineUsers.push(userName);
+    console.log("ég er bjarnabófi");
     io.emit('updateOnlineUsers', onlineUsers);
   });
 
